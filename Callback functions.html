@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body>
+    <script>
+        let promise0 = new Promise((resolve, reject) => {
+           resolve("Guva");
+     });
+
+        let promise1 = new Promise((resolve, reject) => {
+          resolve("football");  
+      });
+
+        let promise2 = new Promise((resolve, reject) => {
+           resolve("bike");
+      });
+
+       let promise3 = new Promise((resolve, reject) => {
+         resolve("window");
+      });
+
+
+
+
+Promise.all([promise0, promise1, promise2, promise3])
+    .then(results => console.log("All success:", results))
+
+
+    Promise.allSettled([promise0, promise1, promise2, promise3])
+    .then(results => console.log("All success:", results))
+
+
+    Promise.any([promise0, promise1, promise2, promise3])
+    .then(results => console.log("All success:", results))
+
+    Promise.race([promise0, promise1, promise2, promise3])
+    .then(results => console.log("All success:", results))
+    </script>
+    
+</body>
+</html>

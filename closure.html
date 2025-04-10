@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function
+      function outerfunction(){
+      let counter = 0;
+      function innerfunction(){
+        counter ++;
+        return counter;
+    }
+    return innerfunction;
+
+}
+const incrementercounter = outerfunction;
+console.log(incrementercounter());
+console.log(incrementercounter());
+
+// prototype inheritence
+let animal ={
+    eats: true,
+    walk(){
+        console.log("animal walks");
+    }
+};
+let monkey = {
+    jumps: true,
+     __proto__:animal
+};
+let runfast = {
+    __proto__:monkey
+}
+monkey.__proto__ = animal;
+runfast.walk();
+
+
+console.log(monkey.eats);
+console.log(monkey.jumps);
+// call and apply
+ var employment1 = {firstName:"vadlamudi",lastName: "nandu"};
+ var employment2 = {firstName:"yaganti",lastName:"venky"};
+ function invite(greeting1, greeting2){
+    console.log(greeting1 + " " + this.firstName + " " + this.lastName + " ," + greeting2);
+ }
+ invite.apply(employment1, ["Hello","how are you?"]);
+ invite.call(employment2, ["Hi","what are you doing?"]);
+//  bind 
+var employee1 = { firstName: "pandu", lastName: "vadlamudi"};
+var employee2 = { firstName: "nandu", lastName: "vadlamudi"};
+
+function invite(greeting1,greeting2){
+    console.log(greeting1 + " " + this.firstName + " " + this.lastName + "," + greeting2);
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

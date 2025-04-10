@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // resolve and reject
+         const myPromise1 = new Promise1((resolve,reject)=>{
+            setTimeout(()=>{
+                 resolve("Promise fulfilled after 3 seconds");
+             },3000);
+         });
+
+     myPromise1
+        .then((methods)=>{console.log(methods)})
+        .catch((error)=>{console.log(error)})
+
+    //  using if 
+
+       const myPromise = new Promise((resolve,reject)=>{
+         let num = Math.random()
+           if(num > 0.5){
+            resolve("this number is greaterthan are equal to 0.5")
+           }
+             else{
+            reject("This number is lessthan are equal to 0.5")
+             }
+       });
+       myPromise
+         .then((methods1)=>{console.log(methods1)})
+         .catch((methods1)=>{console.log(methods1)})
+             
+
+
+        //  promise methods
+           
+    </script>
+</body>
+</html>

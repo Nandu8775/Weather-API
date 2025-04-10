@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textcontent</title>
+</head>
+<body>
+    
+       <div id="original">Welcome to the <span>textcontent</span>Hidden text</div>
+    <script>
+        function showalert(){
+            alert("This is an alert");
+            document.getElementsById("original").textContent = "<b> Hello, textContent </b>";
+        }
+        showalert();
+    </script>
+</body>
+</html>

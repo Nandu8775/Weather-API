@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outterText</title>
+</head>
+<body>
+    <div id="name">
+        <p>Welcome to the outterText</p>
+    </div>
+    <script>
+        function showalert(){
+            alert("this is the alert");
+            document.getElementById("name").outerText = "Hi,this is the outerText";
+        }
+        showalert();
+    </script>
+</body>
+</html>
