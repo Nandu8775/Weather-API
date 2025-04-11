@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="root"></ul>
+    <button id="button" onclick="FetchData()">FetchData</button>
+    <label for="input">Enter the Github url</label>
+    <input type="text" id="username" placeholder="Enter url">
+<script>
+   async function FetchData() {
+      try{
+          let parentEle = document.getElementById("root");
+          let username = document.getElementById("username").value;
+          let url =` https://api.github.com/users/${username}`;
+          let res = await fetch(url)
+          let response=await res.json()
+          console.log(response);
+
+
+          let imageEle = document.createElement("img")
+          console.log(response.avatar_url)
+          imageEle.src = response.avatar_url
+          parentEle.appendChild(imageEle)
+
+          let avatar_url=document.createElement("h4");
+          avatar_url.src=response.avatar_url;
+          parentEle.appendChild(avatar_url);
+
+          let blog=document.createElement("h4");
+          blog.textContent=`Blog : ${response.blog}`;
+          parentEle.appendChild(blog);
+
+          let bio=document.createElement("h4");
+          bio.textContent=`Bio : ${response}`;
+          parentEle.appendChild(bio);
+
+          let created_at=document.createElement("h4");
+          created_at.textContent=`Created : ${response}`;
+          parentEle.appendChild(created_at);
+
+          let company=document.createElement("h4");
+          company.textContent= `Company : ${response}`;
+          parentEle.appendChild(company);
+          
+          let public_respos=document.createElement("h4");
+          public_respos.textContent=`Public_respos : ${response}`;
+          parentEle.appendChild(public_respos);
+
+          let twitter_username=document.createElement("h4");
+          twitter_username.textContent=`Twitter_username : ${response}`;
+          parentEle.appendChild(twitter_username);
+
+          let Url=document.createElement("a");
+          Url.href=response.url;
+          Url.textContent="Visit Link";
+          Url.target="_blank";
+
+        }
+          catch(error){
+            console.log("error");
+        }
+    
+   }
+</script>
+
+</body>
+</html>
